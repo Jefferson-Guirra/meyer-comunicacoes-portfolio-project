@@ -1,3 +1,12 @@
 .header {
-  background-color: aquamarine;
+  background-color: #004AAD;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  color: #fea;
+  font-weight: bold;
 }

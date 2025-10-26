@@ -1,12 +1,11 @@
 import styles from './styles.module.css'
+import {Navigation} from '../navigation/Navigation'
 
 export const HeaderContainer = () => {
   return (
     <header className={styles.header}>
-      <h1>
-        header
-      </h1>
-
+      <p>Meyer Comunicações</p>
+      <Navigation />
     </header>
   )
 }
