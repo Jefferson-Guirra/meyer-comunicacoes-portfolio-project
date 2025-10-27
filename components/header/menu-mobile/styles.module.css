@@ -1,0 +1,85 @@
+.menu-mobile {
+  position: relative;
+  display: block;
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.menu-mobile {
+  cursor: pointer;
+}
+
+.menu-mobile span {
+  display: block;
+  background-color: white;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.menu-mobile.active .line-2 {
+  animation: line-2 .5s forwards ease-in-out;
+}
+
+.menu-mobile.active .line-1 {
+  animation: line-1 .5s forwards ease-in-out ;
+}
+
+.menu-mobile.disable .line-1 {
+  animation: reset-line-1 .5s forwards ease-in-out;
+}
+
+.menu-mobile.disable .line-2 {
+  animation: reset-line-2 .5s forwards ease-in-out;
+}
+
+
+@keyframes line-1{
+  50%{
+    transform: translate3D(5px,5px,0) rotate(90deg);
+  }
+
+  100% {
+    transform: translate3D(0px,5px,0) rotate(135deg);
+  }
+}
+
+
+@keyframes line-2{
+
+  50%{
+    transform: translate3D(-2px,-5px,0) rotate(90deg);
+  }
+
+  100% {
+    transform: translate3D(0px,-5px,0) rotate(37deg);
+  }
+}
+
+
+@keyframes reset-line-1 {
+  0% {
+    transform: translate3D(0px,5px,0) rotate(135deg);
+  }
+
+  100% {
+    transform: translate3D(0,0,0) rotate(0deg);
+  }
+}
+
+@keyframes reset-line-2 {
+  0% {
+    transform: translate3D(0px,-5px,0) rotate(37deg);
+  }
+
+  100% {
+    transform: translate3D(0,0,0) rotate(0deg);
+  }
+
+
+}
