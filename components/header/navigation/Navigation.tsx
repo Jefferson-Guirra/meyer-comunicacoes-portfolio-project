@@ -7,7 +7,6 @@ import Link from 'next/link'
 
 export const Navigation = () => {
   const [viewMenu, setViewMenu] = useState<boolean>(false)
-  console.log(viewMenu)
 
   const onCLick = () => {
     setViewMenu (state => !state)
