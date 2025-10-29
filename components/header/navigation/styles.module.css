@@ -36,3 +36,10 @@
     transform: initial;
   }
 }
+
+
+@media (max-width:1100px) { 
+  .navigationContainer {
+    display: none;
+  }
+}
