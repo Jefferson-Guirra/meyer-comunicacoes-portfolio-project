@@ -1,0 +1,92 @@
+.navigation-mobile {
+  background-color: var(--primary-blue);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: inherit;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out; /* Mais suave */
+}
+
+.navigation-mobile a {
+  position: relative;
+  font-size: 1.2rem;
+  padding: 1.5rem 3rem;
+  display: block;
+  text-align: left;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Suaviza a transição dos links */
+}
+
+.navigation-mobile a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(100% - 3px);
+  width: calc(100% - 6rem);
+  background-color: #fea;
+  height: 2px;
+}
+
+.navigation-mobile.active {
+  z-index: 90;
+  pointer-events: initial;
+  animation: active-menu 0.7s ease-out forwards; /* Mais suave */
+}
+
+.navigation-mobile.disable {
+  animation: disable 0.7s ease-out forwards; /* Mais suave */
+}
+
+.navigation-mobile.active a {
+  transform: translate3d(0px,-50px,0);
+  opacity: 0;
+}
+
+.navigation-mobile.active a:nth-child(1) {
+  animation: show-down 0.5s ease-out forwards; /* Atraso mais suave */
+}
+
+.navigation-mobile.active a:nth-child(2) {
+  animation: show-down 0.5s ease-out forwards .15s;
+}
+
+.navigation-mobile.active a:nth-child(3) {
+  animation: show-down 0.5s ease-out forwards .30s;
+}
+
+.navigation-mobile.active a:nth-child(4) {
+  animation: show-down 0.5s ease-out forwards .45s;
+}
+
+@keyframes show-down {
+  to {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+@keyframes active-menu {
+  from {
+    transform: translate3d(0, calc(-100vh + 59.6px), 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes disable {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, calc(-100vh + 59.6px), 0);
+  }
+}

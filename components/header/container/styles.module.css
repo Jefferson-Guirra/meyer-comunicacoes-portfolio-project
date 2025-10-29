@@ -1,5 +1,5 @@
 .header {
-  background-color: #004AAD;
+  background-color: var(--primary-blue);
   position: fixed;
   top: 0;
   width: 100%;

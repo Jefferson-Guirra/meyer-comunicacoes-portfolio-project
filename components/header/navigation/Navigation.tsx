@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { MenuMobile } from '../menu-mobile/MenuMobile'
 import styles from './styles.module.css'
 import Link from 'next/link'
+import { NavigationMobile } from '../navigation-mobile/NavigationMobile'
 
 export const Navigation = () => {
   const [viewMenu, setViewMenu] = useState<boolean>(false)
@@ -20,6 +21,7 @@ export const Navigation = () => {
         <Link href="#">seção 4</Link>
       </article>
       <MenuMobile isActive={viewMenu} onCLick={onCLick} />
+      <NavigationMobile isView={viewMenu} />
     </>
   )
 }
