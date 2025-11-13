@@ -4,7 +4,7 @@
   height: 30px;
   width: 30px;
   overflow: hidden;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.5rem;

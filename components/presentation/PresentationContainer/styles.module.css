@@ -1,47 +1,69 @@
-.container{
-  position: relative;
-  padding-block: 5rem;
-}
-
-.box {
-  width: 1300px;
-  margin: 0 auto;
-  font-size: 3.5rem;
-  letter-spacing: 3px;
-  color: #000000;
-  font-weight: bold;
-  overflow: visible !important;
-}
-
-.subtitle {
-  position: relative;
-  width: fit-content;
-  margin-top: 3rem;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.subtitle h1 {
-  font-weight: bold;
-}
-
-.subtitle::before {
-  content: "";
-  display: block;
-  background-color: var(--primary-blue);
-  position: absolute;
-  z-index: -1;
-  width:250px;
-  height: 100%;
-  right: 0px;
-}
-
-.container img {
-  position: absolute;
-  top: 0; 
-  left: 0;
-  display: block;
-  z-index: -2;
-  width: 100vw;
+.container {
   height: 100vh;
+  width: 100vw;
+  padding-top: 80px;
+  background-color: var(--primary-blue);
+  color: #fff;
+  padding-inline: 5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+
+.title {
+  font-size: 6rem;
+  width: 80%;
+
+}
+
+.about {
+  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+.explore {
+  height: 77px;
+  width: 96.6px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  letter-spacing: 3px;
+  margin: 0 auto;
+}
+
+.explore span {
+  margin: 0 auto;
+  display: block;
+  width: 2px;
+  height: 0px;
+  animation: loading 5s ease-in-out infinite alternate;
+  background-color: #ffffff70;
+}
+
+.explore p{ 
+  position: absolute;
+  color: #ffffff9a; 
+  bottom: 0;
+  margin: auto 0;
+}
+
+
+@keyframes loading {
+  from {
+    height: 0;
+  }
+  to {
+    height: 35px;
+  }
 }

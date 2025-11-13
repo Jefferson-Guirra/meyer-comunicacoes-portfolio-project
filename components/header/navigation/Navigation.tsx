@@ -14,12 +14,15 @@ export const Navigation = () => {
   }
   return (
     <>
-      <article className={styles.navigationContainer}>
-        <Link href="#">seção 1</Link>
-        <Link href="#">seção 2</Link>
-        <Link href="#">seção 3</Link>
-        <Link href="#">seção 4</Link>
-      </article>
+    {/*
+    <article className={styles.navigationContainer}>
+      <Link href="#">seção 1</Link>
+      <Link href="#">seção 2</Link>
+      <Link href="#">seção 3</Link>
+      <Link href="#">seção 4</Link>
+    </article>
+    
+    */}
       <MenuMobile isActive={viewMenu} onCLick={onCLick} />
       <NavigationMobile isView={viewMenu} />
     </>
