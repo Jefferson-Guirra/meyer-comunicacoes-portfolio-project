@@ -5,14 +5,13 @@ import Link from 'next/link';
 
 export const HeaderContainer = () => {
   return (
-    <Link href={'/'} className={styles.header}>
+    <header className={styles.header}>
       <article className={styles.box}>
-        <article className={ styles.title}>
-          < RiSpeakAiLine color='#DEDEDF' size={25}/>
-          <p>Meyer Comunicações</p>
-        </article>
+        <Link href={'/'} className={ styles.title}>
+          <p>Meyer Comunicação</p>
+        </Link>
         <Navigation />
       </article>
-    </Link>
+    </header>
   )
 }

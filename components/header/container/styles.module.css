@@ -18,6 +18,11 @@
   justify-content: space-between;
   margin: 0 auto;
 }
+
+.header .box a {
+  z-index: 100;
+} 
+
 .header .title {
   display: flex;
   align-items: center;

@@ -20,7 +20,7 @@ export const WorkContainer = () => {
             <p>branding</p>
           </span>
           <span>
-            <p>websites</p>
+            <p>Assessoria de Imprensa</p>
           </span>
           <span>
             <p> mídia digital </p>

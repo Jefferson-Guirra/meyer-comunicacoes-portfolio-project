@@ -1,6 +1,6 @@
 
 import styles from "./page.module.css";
-import {HeaderContainer, PresentationContainer, WorkContainer} from '../components'
+import { PresentationContainer, WorkContainer, Contact} from '../components'
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <main className={styles.main}>
         <PresentationContainer />
         <WorkContainer />
+        <Contact />
       </main>
     </div>
   );

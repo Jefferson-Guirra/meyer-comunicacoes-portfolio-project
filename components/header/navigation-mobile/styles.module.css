@@ -1,92 +1,132 @@
+/* ============================
+   MENU MOBILE (com descida dos links)
+============================ */
+
 .navigation-mobile {
-  background-color: var(--primary-blue);
+  background-color: #000000;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
-  pointer-events: inherit;
-  width: 100vw;
+  width: calc(100vw - 0.9rem);
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: transform 0.7s ease-out, opacity 0.7s ease-out; /* Mais suave */
+
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  transition: opacity .4s ease-out;
 }
 
+/* Mantém os links "prontos para animar" (evita flicker) */
 .navigation-mobile a {
   position: relative;
   font-size: 1.2rem;
   padding: 1.5rem 3rem;
   display: block;
-  text-align: left;
   width: 100%;
-  opacity: 1;
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Suaviza a transição dos links */
+  text-align: left;
+  color: #eee;
+
+  /* start hidden (cada link vai descer para aparecer) */
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
+/* Linha abaixo dos links */
 .navigation-mobile a::before {
   content: '';
   display: block;
   position: absolute;
   top: calc(100% - 3px);
   width: calc(100% - 6rem);
-  background-color: #fea;
-  height: 2px;
+  background-color: #3C3C3C;
+  height: 1px;
 }
+
+/* ============================
+   ABRIR (menu e links)
+============================ */
 
 .navigation-mobile.active {
   z-index: 90;
-  pointer-events: initial;
-  animation: active-menu 0.7s ease-out forwards; /* Mais suave */
+  pointer-events: all;
+  animation: active-menu 0.7s ease-out forwards;
 }
 
+/* cascata de entrada (descida) — delays suaves */
+.navigation-mobile.active a:nth-of-type(1) { animation: show-down .45s ease-out forwards .05s; }
+.navigation-mobile.active a:nth-of-type(2) { animation: show-down .45s ease-out forwards .15s; }
+.navigation-mobile.active a:nth-of-type(3) { animation: show-down .45s ease-out forwards .25s; }
+.navigation-mobile.active a:nth-of-type(4) { animation: show-down .45s ease-out forwards .35s; }
+
+/* ============================
+   FECHAR (menu e links)
+============================ */
+
+/* mantém visível durante a animação de fechamento */
 .navigation-mobile.disable {
-  animation: disable 0.7s ease-out forwards; /* Mais suave */
+  z-index: 90;
+  pointer-events: none; /* evita interação durante animação */
+  animation: disable-menu 0.7s ease-out forwards;
 }
 
-.navigation-mobile.active a {
-  transform: translate3d(0px,-50px,0);
-  opacity: 0;
-}
+/* cascata de saída (subida) — ordem inversa, para ficar natural */
+.navigation-mobile.disable a:nth-of-type(1) { animation: hide-up .35s ease-out forwards .35s; }
+.navigation-mobile.disable a:nth-of-type(2) { animation: hide-up .35s ease-out forwards .25s; }
+.navigation-mobile.disable a:nth-of-type(3) { animation: hide-up .35s ease-out forwards .15s; }
+.navigation-mobile.disable a:nth-of-type(4) { animation: hide-up .35s ease-out forwards .05s; }
 
-.navigation-mobile.active a:nth-child(1) {
-  animation: show-down 0.5s ease-out forwards; /* Atraso mais suave */
-}
+/* ============================
+   KEYFRAMES
+============================ */
 
-.navigation-mobile.active a:nth-child(2) {
-  animation: show-down 0.5s ease-out forwards .15s;
-}
-
-.navigation-mobile.active a:nth-child(3) {
-  animation: show-down 0.5s ease-out forwards .30s;
-}
-
-.navigation-mobile.active a:nth-child(4) {
-  animation: show-down 0.5s ease-out forwards .45s;
-}
-
-@keyframes show-down {
+@keyframes active-menu {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
   to {
-    transform: initial;
+    transform: translateY(0);
     opacity: 1;
   }
 }
 
-@keyframes active-menu {
+@keyframes disable-menu {
   from {
-    transform: translate3d(0, calc(-100vh + 59.6px), 0);
+    transform: translateY(0);
+    opacity: 1;
   }
   to {
-    transform: translate3d(0, 0, 0);
+    transform: translateY(-100%);
+    opacity: 0;
   }
 }
 
-@keyframes disable {
+/* link entra descendo */
+@keyframes show-down {
   from {
-    transform: translate3d(0, 0, 0);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-    transform: translate3d(0, calc(-100vh + 59.6px), 0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* link sai subindo */
+@keyframes hide-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 }
