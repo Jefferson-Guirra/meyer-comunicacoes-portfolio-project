@@ -1,10 +1,11 @@
 import styles from './styles.module.css'
 import {Navigation} from '../navigation/Navigation'
 import { RiSpeakAiLine } from "react-icons/ri";
+import Link from 'next/link';
 
 export const HeaderContainer = () => {
   return (
-    <header className={styles.header}>
+    <Link href={'/'} className={styles.header}>
       <article className={styles.box}>
         <article className={ styles.title}>
           < RiSpeakAiLine color='#DEDEDF' size={25}/>
@@ -12,6 +13,6 @@ export const HeaderContainer = () => {
         </article>
         <Navigation />
       </article>
-    </header>
+    </Link>
   )
 }

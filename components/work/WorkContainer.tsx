@@ -1,5 +1,6 @@
+import Link from 'next/link';
 import styles from "./styles.module.css";
-import { MdOutlineArrowForwardIos } from "react-icons/md";
+import { IoIosArrowForward } from "react-icons/io";
 
 export const WorkContainer = () => {
 
@@ -28,19 +29,18 @@ export const WorkContainer = () => {
             <p>design & campanhas</p>
           </span>
           <span>
-            <p>
-              <p>planejamento</p>
-            </p>
+            <p>planejamento</p>
           </span>
           <span className={styles.line}>
           </span>
         </div>
-
         <span className={styles.line}>
         </span>
 
       </article>
-
+      <Link href={'/servicos'}>nossas soluções
+        <IoIosArrowForward size={20} />
+      </Link>
     </section>
   );
 }
