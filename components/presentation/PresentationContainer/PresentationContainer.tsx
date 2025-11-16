@@ -6,9 +6,13 @@ export const PresentationContainer = () => {
     <section className={ styles.container}>
       <article className={styles.content}>
         <article className={styles.title}>
-          <h1>
-            conectamos criatividade à performance para solucionar problemas.
-          </h1>
+          <span>conectamos</span>
+          <span>criatividade</span>
+          <span>à</span>
+          <span>performance</span>
+          <span>para</span>
+          <span>solucionar</span>
+          <span>problemas.</span>
         </article>
         <article className={styles.about}>
           <p>SOBRE A MEYER COMUNICAÇÃO</p>
