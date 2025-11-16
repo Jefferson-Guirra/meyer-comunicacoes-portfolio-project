@@ -14,7 +14,7 @@ export const Contact = () => {
         <h2>Contato.</h2>
 
         <div className={ styles.links}>
-          <Image src='/meyer.png' width={500} height={500} />
+          <Image src='/meyer.png' alt='meyer' width={500} height={500} />
           <div className={ styles.contacts}>
             <h2>Faça já o seu orçamento</h2>
             <div className={ styles.icons }>
@@ -30,7 +30,7 @@ export const Contact = () => {
               <Link href={'#'}>
                 <MdOutlineEmail color='#DB123B' size={45}/>
               </Link>
-              
+
             </div>
 
           </div>
